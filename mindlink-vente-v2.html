@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindLink — Trouve tes Premiers Clients en 7 Jours</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --or: #C9A84C;
+  --or2: #E8C56A;
+  --or3: #FFF0B0;
+  --rouge: #E84040;
+  --fond: #080810;
+  --fond2: #0E0E1E;
+  --card: #131325;
+  --card2: #181830;
+  --blanc: #FFFFFF;
+  --gris: #A0A0C0;
+  --sub: #555570;
+  --vert: #3DCC8E;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body {
+  background: var(--fond);
+  color: var(--gris);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ── GRAIN ── */
+body::after {
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity:.025;pointer-events:none;z-index:9999;
+}
+
+/* ── CURSOR GLOW ── */
+.cursor-glow {
+  position:fixed;width:300px;height:300px;
+  background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);
+  border-radius:50%;pointer-events:none;z-index:1;
+  transform:translate(-50%,-50%);transition:transform 0.1s linear;
+}
+
+.container{max-width:700px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+
+/* ══════════════════════════════════════
+   BANDE D'URGENCE
+══════════════════════════════════════ */
+.urgency-bar {
+  background: var(--rouge);
+  padding: 10px 20px;
+  text-align: center;
+  position: sticky; top: 0; z-index: 200;
+}
+.urgency-bar p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: #fff; letter-spacing: 0.5px;
+}
+.urgency-bar strong { color: #FFE080; }
+#countdown { font-weight: 700; color: #FFE080; font-size: 15px; }
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+nav {
+  position: sticky; top: 40px; z-index: 100;
+  background: rgba(8,8,16,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  padding: 16px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; letter-spacing: 4px;
+  color: var(--or);
+}
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.nav-price { font-size: 13px; color: var(--sub); }
+.nav-price strong { color: var(--or); font-size: 15px; }
+.nav-cta {
+  background: var(--or); color: var(--fond);
+  font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px 20px; text-decoration: none;
+  transition: all 0.2s; border: none; cursor: pointer;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--or2); transform: translateY(-1px); }
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 0 60px;
+  position: relative; overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 90% 20%, rgba(201,168,76,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Diagonal gold line */
+.hero::before {
+  content:'';
+  position:absolute;top:0;right:0;
+  width:2px;height:100%;
+  background:linear-gradient(to bottom,transparent,var(--or),transparent);
+  opacity:0.3;
+}
+
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 24px;
+  opacity: 0; animation: rise 0.7s ease 0.1s forwards;
+}
+.eyebrow-dot { width: 6px; height: 6px; background: var(--or); border-radius: 50%; }
+.eyebrow-text {
+  font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--or);
+}
+
+.hero-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 14vw, 110px);
+  line-height: 0.88;
+  color: var(--blanc);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0; animation: rise 0.7s ease 0.2s forwards;
+}
+.hero-headline .accent { color: var(--or); }
+.hero-headline .stroke {
+  -webkit-text-stroke: 1px var(--blanc);
+  color: transparent;
+}
+
+.hero-sub {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(18px, 3vw, 24px);
+  font-style: italic;
+  color: var(--gris);
+  line-height: 1.4;
+  margin-bottom: 8px;
+  opacity: 0; animation: rise 0.7s ease 0.3s forwards;
+}
+
+.hero-system {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--sub); margin-bottom: 36px;
+  opacity: 0; animation: rise 0.7s ease 0.35s forwards;
+}
+
+.hero-pills {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 44px;
+  opacity: 0; animation: rise 0.7s ease 0.4s forwards;
+}
+.pill {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 500;
+  border: 1px solid rgba(232,64,64,0.4);
+  color: #FF8080;
+  padding: 5px 12px;
+  background: rgba(232,64,64,0.06);
+}
+.pill::before { content: '✕'; font-size: 9px; }
+
+.hero-cta-group {
+  display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
+  opacity: 0; animation: rise 0.7s ease 0.5s forwards;
+}
+
+.btn-hero {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--or);
+  color: var(--fond);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; letter-spacing: 3px;
+  padding: 20px 40px;
+  text-decoration: none;
+  position: relative; overflow: hidden;
+  transition: all 0.25s;
+  border: none; cursor: pointer;
+}
+.btn-hero::after {
+  content:'';
+  position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
+  transition:left 0.5s;
+}
+.btn-hero:hover { background: var(--or2); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.3); }
+.btn-hero:hover::after { left:100%; }
+.btn-price { font-size: 16px; opacity: 0.8; }
+
+.guarantee-row {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; color: var(--sub);
+}
+.guarantee-row .g-dot { color: var(--vert); }
+
+/* ══════════════════════════════════════
+   SOCIAL PROOF BAR
+══════════════════════════════════════ */
+.proof-bar {
+  background: var(--card);
+  border-top: 1px solid rgba(201,168,76,0.1);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  padding: 20px 0;
+  overflow: hidden;
+}
+.proof-track {
+  display: flex; gap: 60px;
+  animation: scroll-proof 20s linear infinite;
+  width: max-content;
+}
+.proof-item {
+  display: flex; align-items: center; gap: 10px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.proof-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px; color: var(--or); line-height: 1;
+}
+.proof-label { font-size: 12px; color: var(--sub); line-height: 1.3; }
+.proof-sep { color: var(--sub); opacity: 0.3; font-size: 20px; }
+
+@keyframes scroll-proof {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ══════════════════════════════════════
+   DOULEUR
+══════════════════════════════════════ */
+.pain { padding: 90px 0; background: var(--fond2); }
+
+.pain-intro {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(24px, 4vw, 34px);
+  font-style: italic;
+  color: var(--blanc);
+  line-height: 1.3;
+  margin-bottom: 48px;
+  border-left: 3px solid var(--or);
+  padding-left: 24px;
+}
+
+.pain-grid { display: flex; flex-direction: column; gap: 3px; }
+.pain-card {
+  background: var(--card);
+  padding: 22px 24px;
+  display: flex; align-items: flex-start; gap: 20px;
+  transition: all 0.3s;
+  border-left: 3px solid transparent;
+}
+.pain-card:hover { background: var(--card2); border-left-color: var(--rouge); }
+.pain-x {
+  width: 28px; height: 28px; flex-shrink: 0;
+  background: rgba(232,64,64,0.12);
+  border: 1px solid rgba(232,64,64,0.4);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--rouge); font-size: 11px; font-weight: 700;
+  margin-top: 2px;
+}
+.pain-card p { font-size: 15px; line-height: 1.65; }
+.pain-card strong { color: var(--blanc); }
+
+.pain-resolution {
+  margin-top: 40px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(201,168,76,0.05));
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 28px 32px;
+  display: flex; align-items: flex-start; gap: 20px;
+}
+.pain-resolution .r-icon { font-size: 28px; flex-shrink: 0; }
+.pain-resolution p {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px; font-style: italic;
+  color: var(--or2); line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   VIDÉO PLACEHOLDER
+══════════════════════════════════════ */
+.video-section { padding: 80px 0; }
+.video-wrap {
+  position: relative;
+  background: var(--card);
+  border: 1px solid rgba(201,168,76,0.2);
+  aspect-ratio: 16/9;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+.video-wrap::before {
+  content:'';
+  position:absolute;inset:0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.05), transparent 60%);
+}
+.video-play {
+  width: 80px; height: 80px;
+  border: 2px solid var(--or);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 1;
+  transition: all 0.3s;
+}
+.video-play::before { content:'▶'; color: var(--or); font-size: 24px; margin-left: 6px; }
+.video-wrap:hover .video-play { background: var(--or); transform: scale(1.1); }
+.video-wrap:hover .video-play::before { color: var(--fond); }
+.video-label {
+  position: absolute; bottom: 20px; left: 0; right: 0;
+  text-align: center; font-size: 13px; color: var(--sub);
+  z-index: 1;
+}
+.video-caption {
+  text-align: center; margin-top: 16px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic; font-size: 16px; color: var(--gris);
+}
+
+/* ══════════════════════════════════════
+   CE QUE TU OBTIENS
+══════════════════════════════════════ */
+.get-section { padding: 80px 0; background: var(--fond2); }
+.get-grid { display: flex; flex-direction: column; gap: 3px; margin-top: 40px; }
+.get-card {
+  background: var(--card);
+  padding: 24px;
+  display: grid; grid-template-columns: 48px 1fr;
+  gap: 20px; align-items: start;
+  transition: all 0.3s;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.get-card:hover { background: var(--card2); transform: translateX(4px); }
+.get-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px; color: rgba(201,168,76,0.25);
+  line-height: 1;
+}
+.get-card:hover .get-num { color: var(--or); }
+.get-title { font-size: 15px; font-weight: 600; color: var(--blanc); margin-bottom: 6px; }
+.get-desc { font-size: 13px; color: var(--sub); line-height: 1.6; }
+
+/* ══════════════════════════════════════
+   PLAN 7 JOURS
+══════════════════════════════════════ */
+.plan-section { padding: 80px 0; }
+.plan-days { display: flex; flex-direction: column; gap: 2px; margin-top: 40px; }
+.plan-day {
+  display: grid; grid-template-columns: 60px 1fr auto;
+  gap: 20px; align-items: center;
+  padding: 18px 24px;
+  background: var(--card);
+  transition: all 0.3s;
+  border-left: 2px solid transparent;
+}
+.plan-day:hover { background: var(--card2); border-left-color: var(--sub); }
+.plan-day.finale {
+  background: linear-gradient(90deg, rgba(201,168,76,0.12), var(--card));
+  border-left: 2px solid var(--or);
+}
+.d-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px; line-height: 1; color: var(--sub);
+}
+.plan-day.finale .d-num { color: var(--or); }
+.d-title { font-size: 14px; font-weight: 600; color: var(--blanc); margin-bottom: 3px; }
+.d-goal { font-size: 12px; color: var(--sub); }
+.d-tag {
+  font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid var(--sub);
+  color: var(--sub);
+  white-space: nowrap;
+}
+.plan-day.finale .d-tag {
+  border-color: var(--or);
+  color: var(--or);
+  background: rgba(201,168,76,0.1);
+}
+
+/* ══════════════════════════════════════
+   TÉMOIGNAGES
+══════════════════════════════════════ */
+.testi-section { padding: 80px 0; background: var(--fond2); }
+.testi-grid { display: flex; flex-direction: column; gap: 3px; margin-top: 40px; }
+.testi-card {
+  background: var(--card);
+  padding: 28px 24px;
+  border-left: 3px solid var(--or);
+  position: relative;
+}
+.testi-card::before {
+  content:'"';
+  position:absolute;top:12px;right:20px;
+  font-family:'DM Serif Display',serif;
+  font-size:80px;color:rgba(201,168,76,0.08);
+  line-height:1;
+}
+.testi-stars { color: var(--or); font-size: 14px; margin-bottom: 12px; letter-spacing: 2px; }
+.testi-text {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 17px; color: var(--gris);
+  line-height: 1.6; margin-bottom: 16px;
+}
+.testi-author { display: flex; align-items: center; gap: 12px; }
+.testi-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--or), var(--card2));
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 13px; color: var(--fond);
+  flex-shrink: 0;
+}
+.testi-name { font-size: 13px; font-weight: 600; color: var(--blanc); }
+.testi-role { font-size: 11px; color: var(--sub); }
+
+/* ══════════════════════════════════════
+   GROUPE MINDLINK
+══════════════════════════════════════ */
+.group-section { padding: 80px 0; }
+.group-box {
+  background: var(--card2);
+  border: 1px solid rgba(201,168,76,0.25);
+  padding: 48px 36px;
+  position: relative; overflow: hidden;
+}
+.group-box::before {
+  content:'';
+  position:absolute;top:-60px;right:-60px;
+  width:200px;height:200px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,0.1),transparent 70%);
+  pointer-events:none;
+}
+.group-tag {
+  display:inline-block;
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--fond);background:var(--or);
+  padding:4px 12px;margin-bottom:16px;
+}
+.group-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:36px;letter-spacing:2px;
+  color:var(--blanc);margin-bottom:8px;line-height:1.1;
+}
+.group-sub { font-size:14px;color:var(--sub);margin-bottom:28px; }
+.group-list { list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:32px; }
+.group-list li {
+  display:flex;align-items:flex-start;gap:14px;
+  font-size:14px;color:var(--gris);
+}
+.g-arrow { color:var(--or);font-weight:700;flex-shrink:0;margin-top:1px; }
+.btn-group {
+  display:inline-flex;align-items:center;gap:12px;
+  background:rgba(201,168,76,0.1);
+  border:1px solid rgba(201,168,76,0.4);
+  color:var(--or);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:18px;letter-spacing:2px;
+  padding:16px 28px;
+  text-decoration:none;
+  transition:all 0.2s;
+}
+.btn-group:hover { background:rgba(201,168,76,0.2);transform:translateY(-1px); }
+
+/* ══════════════════════════════════════
+   PRIX
+══════════════════════════════════════ */
+.price-section { padding: 80px 0; background: var(--fond2); }
+
+.price-box {
+  position:relative;
+  background: var(--card);
+  border:1px solid rgba(201,168,76,0.3);
+  padding:48px 36px;
+  overflow:hidden;
+}
+.price-box::before {
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--or),transparent);
+}
+.price-glow {
+  position:absolute;top:-80px;right:-80px;
+  width:240px;height:240px;
+  background:radial-gradient(circle,rgba(201,168,76,0.07),transparent 70%);
+  pointer-events:none;
+}
+
+.price-badge {
+  display:inline-block;
+  background:var(--or);color:var(--fond);
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  padding:5px 14px;margin-bottom:20px;
+}
+
+.price-product {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:14px;letter-spacing:4px;color:var(--sub);margin-bottom:6px;
+}
+.price-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(28px,5vw,38px);letter-spacing:1px;
+  color:var(--blanc);line-height:1.05;margin-bottom:4px;
+}
+.price-tagline {
+  font-family:'DM Serif Display',serif;
+  font-style:italic;font-size:15px;color:var(--sub);margin-bottom:36px;
+}
+
+.price-includes {
+  list-style:none;
+  display:flex;flex-direction:column;gap:12px;
+  margin-bottom:36px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  padding-top:28px;
+}
+.price-includes li {
+  display:flex;align-items:center;gap:14px;
+  font-size:14px;color:var(--gris);
+}
+.check-box {
+  width:22px;height:22px;flex-shrink:0;
+  background:rgba(61,204,142,0.1);
+  border:1px solid rgba(61,204,142,0.4);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--vert);font-size:11px;font-weight:700;
+}
+
+.price-total-row {
+  border-top:1px solid rgba(255,255,255,0.05);
+  padding-top:28px;
+  margin-bottom:28px;
+  display:flex;align-items:flex-end;justify-content:space-between;
+}
+.price-label-sm { font-size:12px;color:var(--sub);margin-bottom:4px; }
+.price-amount {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:64px;color:var(--blanc);line-height:1;
+}
+.price-amount sup { font-size:22px;color:var(--or);vertical-align:top;margin-top:14px;display:inline-block; }
+.price-currency-note { font-size:12px;color:var(--sub); }
+.price-savings {
+  text-align:right;
+}
+.price-savings .s-val {
+  font-family:'Bebas Neue',sans-serif;font-size:20px;
+  color:var(--vert);
+}
+.price-savings .s-label { font-size:11px;color:var(--sub); }
+
+.btn-buy {
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  width:100%;
+  background:var(--or);color:var(--fond);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:24px;letter-spacing:3px;
+  padding:22px 36px;
+  text-decoration:none;border:none;cursor:pointer;
+  position:relative;overflow:hidden;
+  transition:all 0.25s;
+}
+.btn-buy::after {
+  content:'';
+  position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
+  transition:left 0.5s;
+}
+.btn-buy:hover { background:var(--or2);transform:translateY(-2px);box-shadow:0 16px 50px rgba(201,168,76,0.35); }
+.btn-buy:hover::after { left:100%; }
+
+.price-micro {
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin-top:16px;flex-wrap:wrap;
+}
+.micro-item {
+  display:flex;align-items:center;gap:6px;
+  font-size:11px;color:var(--sub);
+}
+.micro-icon { color:var(--vert);font-size:13px; }
+
+/* ══════════════════════════════════════
+   FAQ
+══════════════════════════════════════ */
+.faq-section { padding: 80px 0; }
+.faq-list { display:flex;flex-direction:column;gap:2px;margin-top:40px; }
+.faq-item { background:var(--card);overflow:hidden; }
+.faq-q {
+  padding:20px 24px;
+  display:flex;justify-content:space-between;align-items:center;
+  cursor:pointer;font-size:14px;font-weight:600;color:var(--blanc);
+  user-select:none;transition:background 0.2s;
+  gap:16px;
+}
+.faq-q:hover { background:var(--card2); }
+.faq-icon { color:var(--or);font-size:20px;flex-shrink:0;transition:transform 0.3s; }
+.faq-a {
+  max-height:0;overflow:hidden;
+  transition:max-height 0.4s ease,padding 0.4s ease;
+  font-size:14px;color:var(--gris);line-height:1.75;
+  padding:0 24px;
+}
+.faq-item.open .faq-a { max-height:300px;padding:0 24px 22px; }
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+
+/* ══════════════════════════════════════
+   FINAL CTA
+══════════════════════════════════════ */
+.final-cta {
+  padding: 100px 0;
+  background: var(--fond2);
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.final-cta::before {
+  content:'';
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(201,168,76,0.06),transparent 70%);
+  pointer-events:none;
+}
+.final-big {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(48px,10vw,80px);
+  color:var(--blanc);line-height:0.9;
+  margin-bottom:24px;
+  position:relative;z-index:1;
+}
+.final-big .accent { color:var(--or); }
+.final-sub {
+  font-family:'DM Serif Display',serif;
+  font-style:italic;font-size:18px;
+  color:var(--gris);margin-bottom:40px;
+  position:relative;z-index:1;
+}
+.final-cta .btn-hero { position:relative;z-index:1; }
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer {
+  background:#040408;
+  border-top:1px solid rgba(201,168,76,0.1);
+  padding:40px 20px;
+  text-align:center;
+}
+.footer-brand {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:24px;letter-spacing:5px;color:var(--or);margin-bottom:6px;
+}
+.footer-sub { font-size:12px;color:var(--sub);margin-bottom:16px; }
+.footer-note { font-size:11px;color:rgba(85,85,112,0.5); }
+
+/* ══════════════════════════════════════
+   STICKY BAR
+══════════════════════════════════════ */
+.sticky {
+  position:fixed;bottom:0;left:0;right:0;z-index:150;
+  background:rgba(8,8,16,0.97);
+  backdrop-filter:blur(16px);
+  border-top:1px solid rgba(201,168,76,0.2);
+  padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  transform:translateY(100%);transition:transform 0.4s ease;
+}
+.sticky.show { transform:translateY(0); }
+.sticky-left .s-label { font-size:11px;color:var(--sub); }
+.sticky-left .s-price {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:24px;color:var(--or);line-height:1;
+}
+.sticky-btn {
+  background:var(--or);color:var(--fond);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:16px;letter-spacing:2px;
+  padding:13px 24px;text-decoration:none;
+  transition:all 0.2s;white-space:nowrap;flex-shrink:0;
+}
+.sticky-btn:hover { background:var(--or2); }
+
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+@keyframes rise {
+  from { opacity:0;transform:translateY(20px); }
+  to   { opacity:1;transform:translateY(0); }
+}
+
+.reveal {
+  opacity:0;transform:translateY(30px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+}
+.reveal.visible { opacity:1;transform:translateY(0); }
+
+.section-label {
+  font-size:10px;font-weight:700;letter-spacing:5px;text-transform:uppercase;
+  color:var(--or);margin-bottom:10px;
+  display:flex;align-items:center;gap:10px;
+}
+.section-label::before { content:'';display:block;width:24px;height:1px;background:var(--or); }
+
+.section-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(34px,6vw,52px);letter-spacing:1px;
+  color:var(--blanc);line-height:1;margin-bottom:16px;text-transform:uppercase;
+}
+.section-body { font-size:15px;color:var(--gris);line-height:1.75;margin-bottom:16px; }
+
+@media(max-width:480px){
+  .plan-day { grid-template-columns:50px 1fr; }
+  .d-tag { display:none; }
+  .proof-track { animation-duration:12s; }
+  .nav-right .nav-price { display:none; }
+  .price-total-row { flex-direction:column;align-items:flex-start;gap:16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor-glow" id="glow"></div>
+
+<!-- URGENCE -->
+<div class="urgency-bar">
+  <p>⚡ Offre de lancement — Prix de <strong>7 500 FCFA</strong> valable encore <span id="countdown">23:47:12</span></p>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">MINDLINK</div>
+  <div class="nav-right">
+    <div class="nav-price">Guide · <strong>7 500 FCFA</strong></div>
+    <a href="#acheter" class="nav-cta">Obtenir maintenant</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-dot"></div>
+      <div class="eyebrow-text">Guide Digital — MindLink · Vente & Persuasion</div>
+    </div>
+    <h1 class="hero-headline">
+      Trouve<br>
+      tes <span class="accent">Premiers</span><br>
+      <span class="stroke">Clients</span><br>
+      en 7 Jours
+    </h1>
+    <p class="hero-sub">Sans réseau établi. Sans expérience prouvée.</p>
+    <p class="hero-system">Le Système Complet</p>
+    <div class="hero-pills">
+      <span class="pill">Sans réseau</span>
+      <span class="pill">Sans expérience</span>
+      <span class="pill">Sans attendre</span>
+    </div>
+    <div class="hero-cta-group">
+      <a href="#acheter" class="btn-hero">
+        Je veux ce système
+        <span>→</span>
+      </a>
+      <div class="guarantee-row">
+        <span class="g-dot">●</span>
+        Livraison immédiate · Accès à vie · 7 500 FCFA
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-track" id="proofTrack">
+    <div class="proof-item">
+      <div class="proof-num">7</div>
+      <div class="proof-label">Chapitres<br>actionnables</div>
+    </div>
+    <div class="proof-sep">|</div>
+    <div class="proof-item">
+      <div class="proof-num">3</div>
+      <div class="proof-label">Scripts prêts<br>à envoyer</div>
+    </div>
+    <div class="proof-sep">|</div>
+    <div class="proof-item">
+      <div class="proof-num">7</div>
+      <div class="proof-label">Jours pour<br>ton 1er client</div>
+    </div>
+    <div class="proof-sep">|</div>
+    <div class="proof-item">
+      <div class="proof-num">100%</div>
+      <div class="proof-label">Applicable<br>dès aujourd'hui</div>
+    </div>
+    <div class="proof-sep">|</div>
+    <div class="proof-item">
+      <div class="proof-num">0</div>
+      <div class="proof-label">Réseau requis<br>pour commencer</div>
+    </div>
+    <div class="proof-sep">|</div>
+    <!-- duplicate for loop -->
+    <div class="proof-item">
+      <div class="proof-num">7</div>
+      <div class="proof-label">Chapitres<br>actionnables</div>
+    </div>
+    <div class="proof-sep">|</div>
+    <div class="proof-item">
+      <div class="proof-num">3</div>
+      <div class="proof-label">Scripts prêts<br>à envoyer</div>
+    </div>
+    <div class="proof-sep">|</div>
+    <div class="proof-item">
+      <div class="proof-num">7</div>
+      <div class="proof-label">Jours pour<br>ton 1er client</div>
+    </div>
+    <div class="proof-sep">|</div>
+    <div class="proof-item">
+      <div class="proof-num">100%</div>
+      <div class="proof-label">Applicable<br>dès aujourd'hui</div>
+    </div>
+    <div class="proof-sep">|</div>
+    <div class="proof-item">
+      <div class="proof-num">0</div>
+      <div class="proof-label">Réseau requis<br>pour commencer</div>
+    </div>
+    <div class="proof-sep">|</div>
+  </div>
+</div>
+
+<!-- DOULEUR -->
+<section class="pain reveal">
+  <div class="container">
+    <div class="section-label">Le vrai problème</div>
+    <p class="pain-intro">
+      Tu as quelque chose à vendre. Mais les clients ne viennent pas.<br>
+      Ce n'est pas ta faute — personne ne t'a appris comment faire.
+    </p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-x">✕</div>
+        <p><strong>Tu attends d'être prêt.</strong> Mais le bon moment ne vient jamais — et pendant ce temps, quelqu'un d'autre prend tes clients.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-x">✕</div>
+        <p><strong>Tu postes, tu espères, tu attends.</strong> Une stratégie passive ne fonctionne pas quand on démarre. Tu dois aller vers les clients.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-x">✕</div>
+        <p><strong>Tu ne sais pas quoi dire.</strong> Comment aborder quelqu'un, comment convaincre, comment fermer — personne ne t'a donné les mots exacts.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-x">✕</div>
+        <p><strong>Tu vois d'autres réussir</strong> sans comprendre ce qu'ils font différemment. La réponse : ils ont un système. Toi pas encore.</p>
+      </div>
+    </div>
+    <div class="pain-resolution">
+      <div class="r-icon">⚡</div>
+      <p>Le problème n'est pas ton talent, ni ton offre, ni ton marché. C'est l'absence d'un système clair. Ce guide est ce système.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDÉO -->
+<section class="video-section reveal">
+  <div class="container">
+    <div class="section-label">Présentation</div>
+    <h2 class="section-title">Regarde avant<br>d'acheter</h2>
+    <div class="video-wrap" id="videoWrap">
+      <div class="video-play"></div>
+      <div class="video-label">Vidéo de présentation — 90 secondes</div>
+    </div>
+    <p class="video-caption">Ce que tu vas obtenir, et pourquoi ça fonctionne.</p>
+  </div>
+</section>
+
+<!-- CE QUE TU OBTIENS -->
+<section class="get-section reveal">
+  <div class="container">
+    <div class="section-label">Contenu complet</div>
+    <h2 class="section-title">Ce que contient<br>le guide</h2>
+    <div class="get-grid">
+      <div class="get-card">
+        <div class="get-num">01</div>
+        <div>
+          <div class="get-title">Les 3 erreurs qui bloquent 90% des débutants</div>
+          <div class="get-desc">Identifie exactement ce qui t'empêche d'avancer — et comment le corriger immédiatement.</div>
+        </div>
+      </div>
+      <div class="get-card">
+        <div class="get-num">02</div>
+        <div>
+          <div class="get-title">La formule de l'offre irrésistible</div>
+          <div class="get-desc">Une phrase claire que n'importe quel prospect comprend en 10 secondes et à laquelle il est difficile de dire non.</div>
+        </div>
+      </div>
+      <div class="get-card">
+        <div class="get-num">03</div>
+        <div>
+          <div class="get-title">Le plan des 7 jours étape par étape</div>
+          <div class="get-desc">Un jour, une mission, un objectif mesurable. Tu sais exactement quoi faire chaque matin.</div>
+        </div>
+      </div>
+      <div class="get-card">
+        <div class="get-num">04</div>
+        <div>
+          <div class="get-title">3 scripts de prospection prêts à envoyer</div>
+          <div class="get-desc">Les mots exacts selon chaque situation. Copier, adapter légèrement, envoyer.</div>
+        </div>
+      </div>
+      <div class="get-card">
+        <div class="get-num">05</div>
+        <div>
+          <div class="get-title">Les techniques de closing et gestion des objections</div>
+          <div class="get-desc">Comment transformer "c'est trop cher" en vente conclue. La règle du silence. Comment annoncer le prix sans trembler.</div>
+        </div>
+      </div>
+      <div class="get-card">
+        <div class="get-num">06</div>
+        <div>
+          <div class="get-title">Le système pipeline pour ne jamais manquer de clients</div>
+          <div class="get-desc">Pas juste cette semaine. Un système qui génère des clients en continu, automatiquement intégré dans ta routine.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN 7 JOURS -->
+<section class="plan-section reveal">
+  <div class="container">
+    <div class="section-label">La méthode</div>
+    <h2 class="section-title">7 Jours.<br>7 Missions.<br>1 Résultat.</h2>
+    <div class="plan-days">
+      <div class="plan-day"><div class="d-num">01</div><div><div class="d-title">Définir ton offre et ta cible</div><div class="d-goal">1 offre claire rédigée</div></div><div class="d-tag">Fondation</div></div>
+      <div class="plan-day"><div class="d-num">02</div><div><div class="d-title">Identifier 20 prospects</div><div class="d-goal">Liste de 20 contacts qualifiés</div></div><div class="d-tag">Ciblage</div></div>
+      <div class="plan-day"><div class="d-num">03</div><div><div class="d-title">Envoyer 10 premiers messages</div><div class="d-goal">10 conversations ouvertes</div></div><div class="d-tag">Action</div></div>
+      <div class="plan-day"><div class="d-num">04</div><div><div class="d-title">Relancer et qualifier</div><div class="d-goal">3 à 5 prospects qualifiés</div></div><div class="d-tag">Sélection</div></div>
+      <div class="plan-day"><div class="d-num">05</div><div><div class="d-title">Envoyer 10 nouveaux messages</div><div class="d-goal">20 conversations au total</div></div><div class="d-tag">Volume</div></div>
+      <div class="plan-day"><div class="d-num">06</div><div><div class="d-title">Présenter ton offre</div><div class="d-goal">1 à 3 propositions envoyées</div></div><div class="d-tag">Vente</div></div>
+      <div class="plan-day finale"><div class="d-num">07</div><div><div class="d-title">Closer et encaisser</div><div class="d-goal">Ton 1er client payant</div></div><div class="d-tag">Résultat</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="testi-section reveal">
+  <div class="container">
+    <div class="section-label">Ils ont appliqué</div>
+    <h2 class="section-title">Ce que disent<br>ceux qui ont testé</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">J'ai appliqué le script du Jour 3. En 48 heures j'avais 3 réponses et un client confirmé. Je n'aurais jamais pensé que c'était aussi direct.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">K</div>
+          <div>
+            <div class="testi-name">Kofi A.</div>
+            <div class="testi-role">Graphiste freelance, Abidjan</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">La partie sur les objections m'a ouvert les yeux. Je perdais mes clients au moment du prix. Maintenant je sais exactement quoi répondre.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div>
+            <div class="testi-name">Mariama D.</div>
+            <div class="testi-role">Coach bien-être, Dakar</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">Ce qui m'a frappé c'est la simplicité. Pas de théorie vague. Des actions concrètes que j'ai pu exécuter le soir même après le téléchargement.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div>
+            <div class="testi-name">Salif T.</div>
+            <div class="testi-role">Consultant digital, Bamako</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROUPE -->
+<section class="group-section reveal">
+  <div class="container">
+    <div class="section-label">Inclus avec le guide</div>
+    <h2 class="section-title">Plus qu'un guide.<br>Un système vivant.</h2>
+    <div class="group-box">
+      <div class="group-tag">Accès inclus</div>
+      <div class="group-title">Groupe MindLink<br>Vente & Persuasion</div>
+      <div class="group-sub">Communauté privée d'entrepreneurs qui avancent</div>
+      <ul class="group-list">
+        <li><span class="g-arrow">→</span> Soumets tes messages de prospection pour analyse en temps réel</li>
+        <li><span class="g-arrow">→</span> Des solutions personnalisées à tes blocages spécifiques</li>
+        <li><span class="g-arrow">→</span> Des entrepreneurs qui appliquent le même système que toi</li>
+        <li><span class="g-arrow">→</span> Un accès à l'accompagnement personnalisé pour aller plus loin</li>
+      </ul>
+      <a href="https://chat.whatsapp.com/I18bwkvtoux2mrCDzpVqDc" target="_blank" class="btn-group">
+        Rejoindre le groupe →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRIX -->
+<section class="price-section reveal" id="acheter">
+  <div class="container">
+    <div class="section-label">Accès immédiat</div>
+    <h2 class="section-title">Un investissement.<br>Une transformation.</h2>
+    <div class="price-box">
+      <div class="price-glow"></div>
+      <div class="price-badge">Offre de lancement</div>
+      <div class="price-product">MINDLINK — GUIDE DIGITAL</div>
+      <div class="price-title">Trouve tes Premiers Clients<br>en 7 Jours</div>
+      <div class="price-tagline">Le Système Complet</div>
+
+      <ul class="price-includes">
+        <li><div class="check-box">✓</div> Guide PDF complet — 7 chapitres actionnables</li>
+        <li><div class="check-box">✓</div> 3 scripts de prospection prêts à envoyer</li>
+        <li><div class="check-box">✓</div> Le plan des 7 jours étape par étape</li>
+        <li><div class="check-box">✓</div> Techniques de closing & gestion des objections</li>
+        <li><div class="check-box">✓</div> Le système pipeline pour clients en continu</li>
+        <li><div class="check-box">✓</div> <strong style="color:var(--or)">Accès groupe MindLink — Vente & Persuasion</strong></li>
+        <li><div class="check-box">✓</div> Livraison immédiate · Accès à vie</li>
+      </ul>
+
+      <div class="price-total-row">
+        <div>
+          <div class="price-label-sm">Prix unique aujourd'hui</div>
+          <div class="price-amount"><sup>FCFA</sup> 7 500</div>
+          <div class="price-currency-note">Paiement unique · Pas d'abonnement</div>
+        </div>
+        <div class="price-savings">
+          <div class="s-val">↓ LANCEMENT</div>
+          <div class="s-label">Prix augmentera prochainement</div>
+        </div>
+      </div>
+
+      <a href="#" class="btn-buy">
+        Obtenir le guide maintenant →
+      </a>
+
+      <div class="price-micro">
+        <div class="micro-item"><span class="micro-icon">🔒</span> Paiement sécurisé</div>
+        <div class="micro-item"><span class="micro-icon">⚡</span> Livraison immédiate</div>
+        <div class="micro-item"><span class="micro-icon">♾️</span> Accès à vie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section reveal">
+  <div class="container">
+    <div class="section-label">Tes questions</div>
+    <h2 class="section-title">Tout ce que<br>tu veux savoir</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Est-ce que ça marche si je pars vraiment de zéro ?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Oui — c'est précisément pour ça que le guide a été conçu. Zéro réseau requis, zéro expérience préalable. Les scripts et la méthode fonctionnent dès le départ.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Pour quel type d'activité ce guide fonctionne-t-il ?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Freelance, prestataire de service, revendeur, coach, consultant, artisan — toute personne qui vend une compétence ou un service peut appliquer ce système immédiatement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Comment je reçois le guide après le paiement ?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Livraison immédiate après confirmation du paiement. Tu peux commencer le Jour 1 dans les minutes qui suivent l'achat.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">C'est quoi exactement le groupe MindLink inclus ?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Un groupe privé où tu peux soumettre tes messages de prospection pour analyse, poser tes questions en temps réel, et bénéficier d'un accompagnement personnalisé selon ton activité spécifique.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Combien de temps ça prend par jour ?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Entre 30 minutes et 1h30 selon le jour. Le plan est conçu pour être exécutable même avec un emploi du temps chargé.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Le prix va augmenter ?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Oui. Les 7 500 FCFA sont un prix de lancement. Une fois la phase initiale terminée, le tarif sera revu à la hausse. C'est maintenant que le prix est le plus bas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta reveal">
+  <div class="container">
+    <div class="final-big">
+      Ton premier<br>
+      <span class="accent">client</span><br>
+      t'attend.
+    </div>
+    <p class="final-sub">Le seul ennemi maintenant, c'est l'inaction.</p>
+    <a href="#acheter" class="btn-hero">
+      Je prends le guide — 7 500 FCFA
+      <span>→</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">MINDLINK</div>
+  <div class="footer-sub">Vente & Persuasion</div>
+  <div class="footer-note">© MindLink — Tous droits réservés</div>
+</footer>
+
+<!-- STICKY -->
+<div class="sticky" id="sticky">
+  <div class="sticky-left">
+    <div class="s-label">Guide complet · Accès immédiat</div>
+    <div class="s-price">7 500 FCFA</div>
+  </div>
+  <a href="#acheter" class="sticky-btn">Obtenir maintenant →</a>
+</div>
+
+<script>
+// Cursor glow
+const glow = document.getElementById('glow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+
+// Countdown (24h rolling)
+function updateCountdown() {
+  const stored = localStorage.getItem('ml_deadline');
+  let deadline;
+  if (stored) {
+    deadline = parseInt(stored);
+  } else {
+    deadline = Date.now() + 24 * 60 * 60 * 1000;
+    try { localStorage.setItem('ml_deadline', deadline); } catch(e){}
+  }
+  function tick() {
+    const diff = deadline - Date.now();
+    if (diff <= 0) {
+      deadline = Date.now() + 24 * 60 * 60 * 1000;
+      try { localStorage.setItem('ml_deadline', deadline); } catch(e){}
+    }
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('countdown').textContent =
+      String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+updateCountdown();
+
+// Sticky bar
+const sticky = document.getElementById('sticky');
+const hero = document.querySelector('.hero');
+const io = new IntersectionObserver(([e]) => {
+  sticky.classList.toggle('show', !e.isIntersecting);
+}, { threshold: 0.1 });
+io.observe(hero);
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+reveals.forEach(r => revealObs.observe(r));
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Video placeholder click
+document.getElementById('videoWrap').addEventListener('click', function() {
+  this.innerHTML = '<p style="color:var(--sub);font-size:14px;text-align:center;padding:40px">Intègre ici ta vidéo YouTube ou Vimeo via iframe</p>';
+});
+</script>
+</body>
+</html>
