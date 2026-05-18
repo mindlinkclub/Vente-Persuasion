@@ -1039,7 +1039,31 @@ if (vw) {
   vw.addEventListener('click', function() {
     vw.innerHTML = '<p style="color:var(--sub);font-size:13px;text-align:center;padding:40px 20px;position:relative;z-index:1">Intègre ici ta vidéo via iframe YouTube ou Vimeo</p>';
   });
-}
+});
+
+  // ── Payement chariow ──────────────────────────────────────────────────────
+  <!-- Chariow Widget -->
+<div id="chariow-widget" data-product-id="prd_xym4m5"
+    data-store-domain="packdigitalpro.mychariow.shop"
+    data-style="frame"
+    data-border-style="rounded"
+    data-cta-width="xs"
+    data-cta-animation="none"
+    data-locale="en"
+    data-background-color="#FFFFFF"></div>
+<script>
+(function() {
+  var script = document.createElement('script');
+  script.src = 'https://js.chariowcdn.com/v1/widget.min.js';
+  script.async = true;
+  document.head.appendChild(script);
+
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://js.chariowcdn.com/v1/widget.min.css';
+  document.head.appendChild(link);
+})();
+</script>
 </script>
 </body>
 </html>
