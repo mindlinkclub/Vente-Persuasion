@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindLink — Comment Trouver des Clients à Volonté</title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta name="referrer" content="no-referrer">
+<!-- Disable right click and text selection on sensitive content -->
+<style>
+  .prix-bg, .pbox, .pincludes, .testi-grid {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+</style>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+  --or:#C9A84C;
+  --or2:#E8C56A;
+  --or3:#FFF0B0;
+  --fond:#07070F;
+  --fond2:#0C0C1A;
+  --card:#111122;
+  --card2:#161628;
+  --blanc:#F8F8FF;
+  --gris:#A8A8C8;
+  --sub:#505070;
+  --vert:#2ECC8A;
+  --rouge:#E03030;
+  --pay-url:url('https://packdigitalpro.mychariow.shop/prd_xym4m5/checkout');
+}
+
+body{
+  background:var(--fond);
+  color:var(--gris);
+  font-family:'Syne',sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+
+/* GRAIN OVERLAY */
+body::after{
+  content:'';
+  position:fixed;inset:0;
+  pointer-events:none;z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity:.025;
+}
+
+.wrap{max-width:680px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+
+/* ══ BARRE URGENCE ══ */
+.urgence{
+  background:var(--rouge);
+  padding:10px 16px;
+  text-align:center;
+  position:sticky;top:0;z-index:300;
+}
+.urgence p{
+  font-family:'Syne',sans-serif;
+  font-size:13px;font-weight:600;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  flex-wrap:wrap;gap:4px 8px;
+}
+.urgence strong{color:#FFE080}
+#cd{
+  font-family:'Syne',sans-serif;
+  font-size:15px;color:#FFE080;font-weight:800;
+  letter-spacing:3px;
+  background:rgba(0,0,0,.25);
+  padding:2px 8px;border-radius:3px;
+  display:inline-block;
+}
+
+/* ══ NAV ══ */
+nav{
+  position:sticky;top:41px;z-index:200;
+  background:rgba(7,7,15,0.96);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(201,168,76,.12);
+  padding:14px 28px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.brand{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:16px;
+  letter-spacing:4px;color:var(--or);
+  text-transform:uppercase;
+}
+.nav-btn{
+  display:inline-block;
+  background:var(--or);color:var(--fond);
+  font-family:'Syne',sans-serif;
+  font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:10px 20px;
+  text-decoration:none;
+  transition:background .2s;
+  border:none;cursor:pointer;
+}
+.nav-btn:hover{background:var(--or2)}
+
+/* ══ HERO ══ */
+.hero{
+  padding:80px 0 60px;
+  position:relative;
+  overflow:hidden;
+  background:var(--fond);
+}
+
+/* Orbes de fond */
+.orb1{
+  position:absolute;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 70%);
+  top:50%;left:-150px;transform:translateY(-50%);
+  pointer-events:none;
+}
+.orb2{
+  position:absolute;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,.04) 0%,transparent 70%);
+  top:10%;right:-50px;
+  pointer-events:none;
+}
+
+.hero-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero-left{}
+
+.eyebrow{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:24px;
+}
+.eyebrow-line{width:24px;height:1px;background:var(--or);flex-shrink:0}
+.eyebrow-txt{
+  font-size:10px;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--or);
+}
+
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-weight:900;
+  font-size:clamp(40px,5.5vw,58px);
+  line-height:.92;
+  color:var(--blanc);
+  margin-bottom:18px;
+}
+.hero-h1 .gold{color:var(--or)}
+.hero-h1 .italic{font-style:italic}
+
+.hero-sub{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:17px;
+  color:var(--gris);
+  line-height:1.55;
+  margin-bottom:28px;
+  max-width:320px;
+}
+
+.hero-features{
+  list-style:none;
+  display:flex;flex-direction:column;gap:10px;
+  margin-bottom:32px;
+}
+.hero-features li{
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;color:var(--gris);
+}
+.hf-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--or);flex-shrink:0;
+}
+
+.btn-hero{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--or);color:var(--fond);
+  font-family:'Syne',sans-serif;
+  font-size:14px;font-weight:800;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:18px 32px;
+  text-decoration:none;
+  position:relative;overflow:hidden;
+  transition:all .25s;
+  border:none;cursor:pointer;
+  animation:pulse-glow 2.5s ease-in-out infinite, breathe 2.5s ease-in-out infinite;
+}
+.btn-hero::before{
+  content:'';
+  position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  animation:shimmer 2.5s ease-in-out infinite;
+}
+.btn-hero:hover{
+  background:var(--or2);
+  transform:translateY(-2px) scale(1.03);
+  box-shadow:0 12px 40px rgba(201,168,76,.5);
+  animation:none;
+}
+.btn-hero:hover::before{animation:none;left:100%}
+
+.hero-guarantee{
+  margin-top:12px;
+  font-size:11px;color:var(--sub);
+  display:flex;align-items:center;gap:6px;
+}
+
+/* Coverbook */
+.hero-right{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+.hero-right::before{
+  content:'';
+  position:absolute;
+  width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.coverbook{
+  width:100%;
+  max-width:300px;
+  height:auto;
+  display:block;
+  position:relative;z-index:1;
+  filter:drop-shadow(0 20px 60px rgba(201,168,76,.2));
+  animation:float 4s ease-in-out infinite;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+@keyframes pulse-glow{
+  0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.5),0 0 20px rgba(201,168,76,.2)}
+  50%{box-shadow:0 0 0 10px rgba(201,168,76,.0),0 0 40px rgba(201,168,76,.4)}
+}
+@keyframes shimmer{
+  0%{left:-100%}
+  60%,100%{left:100%}
+}
+@keyframes breathe{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.025)}
+}
+
+/* Badge système prouvé */
+.badge-proof{
+  position:absolute;
+  bottom:20px;right:0;
+  background:var(--card);
+  border:1px solid rgba(201,168,76,.3);
+  padding:12px 16px;
+  text-align:center;
+  z-index:2;
+}
+.badge-proof .bp-top{
+  font-size:9px;font-weight:700;letter-spacing:2px;
+  color:var(--or);text-transform:uppercase;margin-bottom:2px;
+}
+.badge-proof .bp-stars{color:var(--or);font-size:12px;letter-spacing:2px}
+
+/* Mobile hero */
+@media(max-width:600px){
+  .hero-inner{grid-template-columns:1fr;gap:30px}
+  .hero-right{order:-1}
+  .coverbook{max-width:220px}
+  .hero-sub{max-width:100%}
+  .badge-proof{display:none}
+}
+
+/* ══ TICKER ══ */
+.ticker{
+  background:var(--card);
+  border-top:1px solid rgba(201,168,76,.08);
+  border-bottom:1px solid rgba(201,168,76,.08);
+  padding:18px 0;
+  overflow:hidden;
+}
+.ticker-track{
+  display:flex;gap:44px;
+  animation:scroll-t 20s linear infinite;
+  width:max-content;
+}
+@keyframes scroll-t{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ti{display:flex;align-items:center;gap:10px;white-space:nowrap;flex-shrink:0}
+.ti-num{
+  font-family:'Playfair Display',serif;
+  font-size:26px;font-weight:900;color:var(--or);line-height:1;
+}
+.ti-lbl{font-size:11px;color:var(--sub);line-height:1.3}
+.ti-sep{color:var(--sub);opacity:.2;font-size:18px}
+
+/* ══ SECTIONS ══ */
+section{padding:80px 0}
+.s-tag{
+  font-size:10px;font-weight:700;
+  letter-spacing:5px;text-transform:uppercase;
+  color:var(--or);margin-bottom:12px;
+  display:flex;align-items:center;gap:10px;
+}
+.s-tag::before{content:'';width:20px;height:1px;background:var(--or)}
+.s-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,5vw,46px);font-weight:900;
+  color:var(--blanc);line-height:1;margin-bottom:20px;
+}
+.s-title em{color:var(--or);font-style:italic}
+.s-body{font-size:15px;color:var(--gris);line-height:1.8;margin-bottom:16px}
+
+/* ══ DOULEUR ══ */
+.douleur{background:var(--fond2)}
+.pain-intro{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:clamp(18px,2.5vw,23px);
+  color:var(--blanc);line-height:1.45;
+  border-left:3px solid var(--or);
+  padding:16px 22px;
+  margin-bottom:40px;
+  background:rgba(201,168,76,.04);
+}
+.pain-list{display:flex;flex-direction:column;gap:3px}
+.pain-card{
+  background:var(--card);
+  padding:20px 22px;
+  display:flex;align-items:flex-start;gap:16px;
+  transition:all .3s;
+  border-left:3px solid transparent;
+}
+.pain-card:hover{background:var(--card2);border-left-color:var(--rouge)}
+.px{
+  width:26px;height:26px;flex-shrink:0;
+  background:rgba(224,48,48,.1);
+  border:1px solid rgba(224,48,48,.35);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--rouge);font-size:10px;font-weight:700;margin-top:2px;
+}
+.pain-card p{font-size:15px;line-height:1.65}
+.pain-card strong{color:var(--blanc)}
+.pain-resolution{
+  margin-top:36px;
+  background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(201,168,76,.04));
+  border:1px solid rgba(201,168,76,.25);
+  padding:26px 28px;
+  display:flex;align-items:flex-start;gap:16px;
+}
+.pain-resolution .ico{font-size:24px;flex-shrink:0;margin-top:2px}
+.pain-resolution p{
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-size:18px;
+  color:var(--or2);line-height:1.5;
+}
+
+/* ══ VIDÉO ══ */
+.video-wrap{
+  position:relative;background:var(--card);
+  border:1px solid rgba(201,168,76,.15);
+  aspect-ratio:16/9;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;margin-top:32px;
+}
+.video-wrap::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(201,168,76,.06),transparent 60%);
+}
+.vplay{
+  width:68px;height:68px;
+  border:2px solid var(--or);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;z-index:1;transition:all .3s;
+}
+.vplay::before{content:'▶';color:var(--or);font-size:20px;margin-left:5px}
+.video-wrap:hover .vplay{background:var(--or);transform:scale(1.1)}
+.video-wrap:hover .vplay::before{color:var(--fond)}
+.v-caption{
+  text-align:center;margin-top:12px;
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-size:14px;color:var(--sub);
+}
+
+/* ══ CONTENU ══ */
+.contenu-bg{background:var(--fond2)}
+.get-grid{display:flex;flex-direction:column;gap:3px;margin-top:32px}
+.get-card{
+  background:var(--card);
+  padding:20px 22px;
+  display:grid;grid-template-columns:42px 1fr;
+  gap:16px;align-items:start;
+  transition:all .3s;
+}
+.get-card:hover{background:var(--card2);transform:translateX(4px)}
+.gn{
+  font-family:'Playfair Display',serif;
+  font-size:36px;font-weight:900;
+  color:rgba(201,168,76,.2);line-height:1;
+}
+.get-card:hover .gn{color:var(--or)}
+.gt{font-size:14px;font-weight:700;color:var(--blanc);margin-bottom:4px}
+.gd{font-size:13px;color:var(--sub);line-height:1.6}
+
+/* ══ PLAN 7J ══ */
+.plan-days{display:flex;flex-direction:column;gap:2px;margin-top:32px}
+.pday{
+  display:grid;grid-template-columns:52px 1fr auto;
+  gap:16px;align-items:center;
+  padding:15px 20px;background:var(--card);
+  transition:all .3s;border-left:2px solid transparent;
+}
+.pday:hover{background:var(--card2);border-left-color:var(--sub)}
+.pday.last{
+  background:linear-gradient(90deg,rgba(201,168,76,.1),var(--card));
+  border-left:2px solid var(--or);
+}
+.dn{
+  font-family:'Playfair Display',serif;
+  font-size:30px;font-weight:900;color:var(--sub);line-height:1;
+}
+.pday.last .dn{color:var(--or)}
+.dt{font-size:14px;font-weight:600;color:var(--blanc);margin-bottom:2px}
+.pday.last .dt{color:var(--or)}
+.dg{font-size:12px;color:var(--sub)}
+.dtag{
+  font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:3px 9px;border:1px solid var(--sub);color:var(--sub);white-space:nowrap;
+}
+.pday.last .dtag{border-color:var(--or);color:var(--or);background:rgba(201,168,76,.08)}
+@media(max-width:480px){.pday{grid-template-columns:42px 1fr}.dtag{display:none}}
+
+/* ══ TÉMOIGNAGES ══ */
+.testi-bg{background:var(--fond2)}
+.testi-grid{display:flex;flex-direction:column;gap:3px;margin-top:32px}
+.tcard{
+  background:var(--card);padding:26px 22px;
+  border-left:3px solid var(--or);position:relative;overflow:hidden;
+}
+.tcard::after{
+  content:'"';position:absolute;top:6px;right:14px;
+  font-family:'Playfair Display',serif;
+  font-size:80px;color:rgba(201,168,76,.06);line-height:1;
+}
+.tstars{color:var(--or);font-size:13px;letter-spacing:2px;margin-bottom:10px}
+.ttext{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:16px;color:var(--gris);line-height:1.65;margin-bottom:16px;
+}
+.tauthor{display:flex;align-items:center;gap:10px}
+.tavatar{
+  width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(135deg,var(--or),var(--card2));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:12px;color:var(--fond);flex-shrink:0;
+}
+.tname{font-size:13px;font-weight:700;color:var(--blanc)}
+.trole{font-size:11px;color:var(--sub)}
+
+/* ══ GROUPE ══ */
+.gbox{
+  background:var(--card2);
+  border:1px solid rgba(201,168,76,.2);
+  padding:40px 30px;position:relative;overflow:hidden;
+  margin-top:32px;
+}
+.gbox::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,.07),transparent 70%);
+  pointer-events:none;
+}
+.gtag-pill{
+  display:inline-block;
+  font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--fond);background:var(--or);
+  padding:4px 12px;margin-bottom:14px;
+}
+.gtitle{
+  font-family:'Playfair Display',serif;
+  font-size:26px;font-weight:900;color:var(--blanc);
+  margin-bottom:5px;line-height:1.1;
+}
+.gsub{font-size:13px;color:var(--sub);margin-bottom:22px}
+.glist{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:26px}
+.glist li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--gris)}
+.garrow{color:var(--or);font-weight:700;flex-shrink:0;margin-top:2px}
+.btn-group{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(201,168,76,.1);
+  border:1px solid rgba(201,168,76,.35);
+  color:var(--or);
+  font-family:'Syne',sans-serif;font-size:13px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:13px 22px;text-decoration:none;transition:all .2s;
+}
+.btn-group:hover{background:rgba(201,168,76,.18)}
+
+/* ══ PRIX ══ */
+.prix-bg{background:var(--fond2)}
+.pbox{
+  position:relative;background:var(--card);
+  border:1px solid rgba(201,168,76,.25);
+  padding:40px 30px;overflow:hidden;margin-top:32px;
+}
+.pbox::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--or),transparent);
+}
+.pglow{
+  position:absolute;top:-80px;right:-80px;
+  width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,.07),transparent 70%);
+  pointer-events:none;
+}
+.pbadge{
+  display:inline-block;background:var(--or);color:var(--fond);
+  font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  padding:4px 12px;margin-bottom:18px;
+}
+.pprod{
+  font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+  color:var(--sub);margin-bottom:5px;
+}
+.ptitle{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(20px,3.5vw,30px);font-weight:900;
+  color:var(--blanc);line-height:1;margin-bottom:3px;
+}
+.ptagline{
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-size:13px;color:var(--sub);margin-bottom:28px;
+}
+.pincludes{
+  list-style:none;display:flex;flex-direction:column;gap:11px;
+  border-top:1px solid rgba(255,255,255,.04);
+  padding-top:22px;margin-bottom:24px;
+}
+.pincludes li{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--gris)}
+.chk{
+  width:20px;height:20px;flex-shrink:0;
+  background:rgba(46,204,138,.1);border:1px solid rgba(46,204,138,.4);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--vert);font-size:10px;font-weight:700;
+}
+.ptotal{
+  border-top:1px solid rgba(255,255,255,.04);
+  padding-top:22px;margin-bottom:22px;
+}
+.plabel{font-size:11px;color:var(--sub);margin-bottom:3px}
+.pamount{
+  font-family:'Playfair Display',serif;
+  font-size:58px;font-weight:900;color:var(--blanc);line-height:1;
+}
+.pamount sup{
+  font-size:18px;color:var(--or);
+  vertical-align:top;margin-top:10px;display:inline-block;
+}
+.pcurrency{font-size:12px;color:var(--sub);margin-bottom:22px}
+.btn-buy{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  width:100%;background:var(--or);color:var(--fond);
+  font-family:'Syne',sans-serif;font-size:17px;font-weight:800;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:21px 32px;
+  text-decoration:none;border:none;cursor:pointer;
+  position:relative;overflow:hidden;transition:all .25s;
+  animation:pulse-glow 2.5s ease-in-out infinite, breathe 2.5s ease-in-out infinite;
+}
+.btn-buy::after{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  animation:shimmer 2.5s ease-in-out infinite;
+}
+.btn-buy:hover{
+  background:var(--or2);
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 16px 50px rgba(201,168,76,.5);
+  animation:none;
+}
+.btn-buy:hover::after{animation:none}
+.pmicro{
+  display:flex;align-items:center;justify-content:center;
+  gap:18px;margin-top:12px;flex-wrap:wrap;
+}
+.mi{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--sub)}
+.mi span{color:var(--vert);font-size:13px}
+
+/* ══ FAQ ══ */
+.faq-list{display:flex;flex-direction:column;gap:2px;margin-top:32px}
+.fi{background:var(--card);overflow:hidden}
+.fq{
+  padding:18px 20px;display:flex;justify-content:space-between;align-items:center;
+  cursor:pointer;font-size:14px;font-weight:600;color:var(--blanc);
+  user-select:none;transition:background .2s;gap:12px;
+}
+.fq:hover{background:var(--card2)}
+.fi-icon{color:var(--or);font-size:20px;flex-shrink:0;transition:transform .3s}
+.fa{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .4s ease;
+  font-size:14px;color:var(--gris);line-height:1.75;padding:0 20px;
+}
+.fi.open .fa{max-height:300px;padding:0 20px 18px}
+.fi.open .fi-icon{transform:rotate(45deg)}
+
+/* ══ FINAL CTA ══ */
+.fcta{
+  padding:90px 0;
+  background:var(--fond2);
+  text-align:center;position:relative;overflow:hidden;
+}
+.fcta::before{
+  content:'';
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,.06),transparent 70%);
+  pointer-events:none;
+}
+.fbig{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(38px,8vw,68px);font-weight:900;
+  color:var(--blanc);line-height:.95;
+  margin-bottom:20px;position:relative;z-index:1;
+}
+.fbig em{color:var(--or);font-style:italic;display:block}
+.fsub{
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-size:17px;
+  color:var(--gris);margin-bottom:36px;
+  position:relative;z-index:1;
+}
+
+/* ══ FOOTER ══ */
+footer{
+  background:#040408;
+  border-top:1px solid rgba(201,168,76,.08);
+  padding:36px 20px;text-align:center;
+}
+.fbrand{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:18px;letter-spacing:5px;color:var(--or);margin-bottom:5px;
+}
+.fsubb{font-size:11px;color:var(--sub);margin-bottom:12px}
+.fnote{font-size:10px;color:rgba(80,80,112,.5)}
+
+/* ══ STICKY ══ */
+.sticky{
+  position:fixed;bottom:0;left:0;right:0;z-index:150;
+  background:rgba(7,7,15,.97);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-top:1px solid rgba(201,168,76,.15);
+  padding:10px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  transform:translateY(100%);
+  transition:transform .4s ease;
+}
+.sticky.show{transform:translateY(0)}
+.sl{min-width:0;flex-shrink:1}
+.sl .sl-lbl{font-size:10px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sl .sl-price{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:900;color:var(--or);line-height:1;
+}
+.sbtn{
+  background:var(--or);color:var(--fond);
+  font-family:'Syne',sans-serif;font-size:10px;font-weight:800;
+  letter-spacing:1px;text-transform:uppercase;
+  padding:11px 14px;text-decoration:none;
+  transition:background .2s;white-space:nowrap;flex-shrink:0;
+  max-width:52%;text-align:center;
+  overflow:hidden;text-overflow:ellipsis;
+}
+.sbtn:hover{background:var(--or2)}
+@media(max-width:380px){
+  .sbtn{font-size:9px;padding:10px 10px;letter-spacing:0.5px}
+  .sl .sl-price{font-size:17px}
+}
+
+/* ══ REVEAL ══ */
+.reveal{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- URGENCE -->
+<div class="urgence">
+  <p>⚡ Prix de lancement — <strong>7 500 FCFA</strong> · Expire dans <span id="cd">23:59:59</span></p>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="brand">MindLink</div>
+  <a href="https://packdigitalpro.mychariow.shop/prd_xym4m5/checkout" class="nav-btn">Obtenir le guide</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb1"></div>
+  <div class="orb2"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+
+      <!-- TEXTE -->
+      <div class="hero-left">
+        <div class="eyebrow">
+          <div class="eyebrow-line"></div>
+          <div class="eyebrow-txt">Guide Digital · MindLink</div>
+        </div>
+        <h1 class="hero-h1">
+          Comment<br>
+          Trouver des<br>
+          <span class="gold italic">Clients</span><br>
+          à Volonté
+        </h1>
+        <p class="hero-sub">Le système complet pour avoir des clients quand tu en as besoin — pas quand ils veulent bien venir.</p>
+        <ul class="hero-features">
+          <li><div class="hf-dot"></div> Guide numérique PDF — téléchargeable sur le portail d'achat + envoyé par email</li>
+          <li><div class="hf-dot"></div> Les scripts exacts prêts à envoyer</li>
+          <li><div class="hf-dot"></div> Les techniques pour closer et encaisser</li>
+          <li><div class="hf-dot"></div> Accès groupe MindLink inclus</li>
+        </ul>
+        <a href="https://packdigitalpro.mychariow.shop/prd_xym4m5/checkout" class="btn-hero">
+          Je veux ce système →
+        </a>
+        <div class="hero-guarantee">🔒 Livraison immédiate · Accès à vie · 7 500 FCFA</div>
+      </div>
+
+      <!-- COVERBOOK -->
+      <div class="hero-right">
+        <img src="coverbook.png" alt="Comment Trouver des Clients à Volonté — MindLink" class="coverbook">
+        <div class="badge-proof">
+          <div class="bp-top">Système Prouvé</div>
+          <div class="bp-stars">★★★★★</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ti"><div class="ti-num">7</div><div class="ti-lbl">Chapitres<br>actionnables</div></div>
+    <div class="ti-sep">|</div>
+    <div class="ti"><div class="ti-num">3</div><div class="ti-lbl">Scripts prêts<br>à envoyer</div></div>
+    <div class="ti-sep">|</div>
+    <div class="ti"><div class="ti-num">7j</div><div class="ti-lbl">Pour avoir<br>des clients</div></div>
+    <div class="ti-sep">|</div>
+    <div class="ti"><div class="ti-num">100%</div><div class="ti-lbl">Applicable<br>dès aujourd'hui</div></div>
+    <div class="ti-sep">|</div>
+    <div class="ti"><div class="ti-num">0</div><div class="ti-lbl">Réseau requis<br>pour démarrer</div></div>
+    <div class="ti-sep">|</div>
+    <div class="ti"><div class="ti-num">7</div><div class="ti-lbl">Chapitres<br>actionnables</div></div>
+    <div class="ti-sep">|</div>
+    <div class="ti"><div class="ti-num">3</div><div class="ti-lbl">Scripts prêts<br>à envoyer</div></div>
+    <div class="ti-sep">|</div>
+    <div class="ti"><div class="ti-num">7j</div><div class="ti-lbl">Pour avoir<br>des clients</div></div>
+    <div class="ti-sep">|</div>
+    <div class="ti"><div class="ti-num">100%</div><div class="ti-lbl">Applicable<br>dès aujourd'hui</div></div>
+    <div class="ti-sep">|</div>
+    <div class="ti"><div class="ti-num">0</div><div class="ti-lbl">Réseau requis<br>pour démarrer</div></div>
+    <div class="ti-sep">|</div>
+  </div>
+</div>
+
+<!-- DOULEUR -->
+<section class="douleur reveal">
+  <div class="wrap">
+    <div class="s-tag">Le vrai problème</div>
+    <p class="pain-intro">
+      Tu n'arrives pas à trouver des clients. Tu essaies par tous les moyens. Mais rien ne marche vraiment — et chaque jour qui passe sans client, c'est de l'argent qui part ailleurs.
+    </p>
+    <div class="pain-list">
+      <div class="pain-card">
+        <div class="px">✕</div>
+        <p><strong>Tu parles autour de toi. Tu postes.</strong> Mais les clients ne viennent pas. Tu ne sais jamais d'où viendra le prochain.</p>
+      </div>
+      <div class="pain-card">
+        <div class="px">✕</div>
+        <p><strong>Tu attends. Tu espères.</strong> Une recommandation, un passage. Une stratégie passive qui ne suffit pas.</p>
+      </div>
+      <div class="pain-card">
+        <div class="px">✕</div>
+        <p><strong>Tu ne sais pas quoi dire, à qui écrire, comment convaincre.</strong> Personne ne t'a appris les mots exacts. Alors tu improvises — et tu perds des ventes.</p>
+      </div>
+      <div class="pain-card">
+        <div class="px">✕</div>
+        <p><strong>Pendant ce temps, d'autres trouvent des clients.</strong> Pas parce qu'ils sont meilleurs. Parce qu'ils ont un système que tu n'as pas encore.</p>
+      </div>
+    </div>
+    <div class="pain-resolution">
+      <div class="ico">⚡</div>
+      <p>Ce n'est pas un problème de talent, ni de marché, ni de chance. C'est un problème de système. Et un système, ça s'apprend.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDÉO -->
+<section class="reveal">
+  <div class="wrap">
+    <div class="s-tag">Présentation</div>
+    <h2 class="s-title">Regarde avant<br>d'<em>acheter</em></h2>
+    <p style="font-family:'Syne',sans-serif;font-size:12px;color:var(--sub);margin-top:24px;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
+      ▶ Clique sur la vidéo pour lancer la lecture &nbsp;·&nbsp; Tu peux régler la qualité via les paramètres du lecteur
+    </p>
+    <div style="
+      position:relative;
+      aspect-ratio:16/9;
+      overflow:hidden;
+      border:1px solid rgba(201,168,76,.15);
+      background:#000;
+    ">
+      <iframe
+        src="https://drive.google.com/file/d/10M8zR0ydHFdm2y2DzFoqUcxC-ZmQ5Uzp/preview"
+        width="100%" height="100%"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+        allow="autoplay"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="v-caption">Ce que tu vas obtenir, et pourquoi ça fonctionne.</p>
+  </div>
+</section>
+
+<!-- CONTENU -->
+<section class="contenu-bg reveal">
+  <div class="wrap">
+    <div class="s-tag">Ce que tu obtiens</div>
+    <h2 class="s-title">Le système<br><em>complet</em></h2>
+    <div class="get-grid">
+      <div class="get-card"><div class="gn">01</div><div><div class="gt">Les 3 erreurs qui bloquent 90% des gens</div><div class="gd">Identifie exactement ce qui t'empêche d'avancer — et corrige-le immédiatement.</div></div></div>
+      <div class="get-card"><div class="gn">02</div><div><div class="gt">La formule de l'offre irrésistible</div><div class="gd">Une phrase que n'importe quel prospect comprend en 10 secondes — difficile de dire non.</div></div></div>
+      <div class="get-card"><div class="gn">03</div><div><div class="gt">Le plan des 7 jours étape par étape</div><div class="gd">Un jour. Une mission. Un objectif. Tu sais exactement quoi faire chaque matin.</div></div></div>
+      <div class="get-card"><div class="gn">04</div><div><div class="gt">3 scripts de prospection prêts à envoyer</div><div class="gd">Les mots exacts selon chaque situation. Copier, adapter, envoyer.</div></div></div>
+      <div class="get-card"><div class="gn">05</div><div><div class="gt">Closing et gestion des objections</div><div class="gd">Comment annoncer ton prix sans trembler. Comment transformer "c'est trop cher" en vente conclue.</div></div></div>
+      <div class="get-card"><div class="gn">06</div><div><div class="gt">Le système pipeline pour des clients en continu</div><div class="gd">Pas juste cette semaine. Un système intégré dans ta routine pour des clients à volonté.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN 7J -->
+<section class="reveal">
+  <div class="wrap">
+    <div class="s-tag">La méthode</div>
+    <h2 class="s-title">7 Jours.<br>7 Missions.<br><em>1 Résultat.</em></h2>
+    <div class="plan-days">
+      <div class="pday"><div class="dn">01</div><div><div class="dt">Définir ton offre et ta cible</div><div class="dg">1 offre claire rédigée</div></div><div class="dtag">Fondation</div></div>
+      <div class="pday"><div class="dn">02</div><div><div class="dt">Identifier 20 prospects</div><div class="dg">Liste de 20 contacts qualifiés</div></div><div class="dtag">Ciblage</div></div>
+      <div class="pday"><div class="dn">03</div><div><div class="dt">Envoyer 10 premiers messages</div><div class="dg">10 conversations ouvertes</div></div><div class="dtag">Action</div></div>
+      <div class="pday"><div class="dn">04</div><div><div class="dt">Relancer et qualifier</div><div class="dg">3 à 5 prospects chauds</div></div><div class="dtag">Sélection</div></div>
+      <div class="pday"><div class="dn">05</div><div><div class="dt">Envoyer 10 nouveaux messages</div><div class="dg">20 conversations au total</div></div><div class="dtag">Volume</div></div>
+      <div class="pday"><div class="dn">06</div><div><div class="dt">Présenter ton offre</div><div class="dg">1 à 3 propositions envoyées</div></div><div class="dtag">Vente</div></div>
+      <div class="pday last"><div class="dn">07</div><div><div class="dt">Closer et encaisser</div><div class="dg">Des clients qui paient</div></div><div class="dtag">Résultat</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="testi-bg reveal">
+  <div class="wrap">
+    <div class="s-tag">Ils ont appliqué</div>
+    <h2 class="s-title">Ce qu'ils<br><em>disent</em></h2>
+    <div class="testi-grid">
+      <div class="tcard">
+        <div class="tstars">★★★★★</div>
+        <div class="ttext">J'ai appliqué le script du Jour 3. En 48 heures j'avais 3 réponses et un client confirmé. Je n'aurais jamais pensé que c'était aussi direct.</div>
+        <div class="tauthor"><div class="tavatar">K</div><div><div class="tname">Kofi A.</div><div class="trole">Graphiste freelance, Abidjan</div></div></div>
+      </div>
+      <div class="tcard">
+        <div class="tstars">★★★★★</div>
+        <div class="ttext">La partie sur les objections m'a ouvert les yeux. Je perdais mes clients au moment du prix. Maintenant je sais exactement quoi répondre.</div>
+        <div class="tauthor"><div class="tavatar">M</div><div><div class="tname">Mariama D.</div><div class="trole">Coach bien-être, Dakar</div></div></div>
+      </div>
+      <div class="tcard">
+        <div class="tstars">★★★★★</div>
+        <div class="ttext">Pas de théorie vague. Des actions concrètes que j'ai pu exécuter le soir même après le téléchargement.</div>
+        <div class="tauthor"><div class="tavatar">S</div><div><div class="tname">Salif T.</div><div class="trole">Consultant digital, Bamako</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROUPE -->
+<section class="reveal">
+  <div class="wrap">
+    <div class="s-tag">Inclus avec le guide</div>
+    <h2 class="s-title">Plus qu'un guide.<br><em>Un écosystème.</em></h2>
+    <div class="gbox">
+      <div class="gtag-pill">Accès inclus</div>
+      <div class="gtitle">Groupe MindLink<br>Vente & Persuasion</div>
+      <div class="gsub">Communauté privée d'entrepreneurs qui avancent</div>
+      <ul class="glist">
+        <li><span class="garrow">→</span> Soumets tes messages de prospection pour analyse en temps réel</li>
+        <li><span class="garrow">→</span> Des solutions personnalisées à tes blocages spécifiques</li>
+        <li><span class="garrow">→</span> Des entrepreneurs qui appliquent le même système que toi</li>
+        <li><span class="garrow">→</span> Accès à l'accompagnement personnalisé pour aller plus loin</li>
+      </ul>
+      <a href="https://packdigitalpro.mychariow.shop/prd_xym4m5/checkout" class="btn-group">
+        Rejoindre le groupe →
+      </a>
+      <div style="margin-top:12px;display:flex;align-items:center;gap:8px;">
+        <div style="display:flex;align-items:center;gap:-4px;">
+          <div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#1A1A32);border:2px solid #1A1A32;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#C9A84C;">K</div>
+          <div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#E8C56A,#1A1A32);border:2px solid #1A1A32;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#1A1A32;margin-left:-6px;">M</div>
+          <div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#2D2D44);border:2px solid #1A1A32;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff;margin-left:-6px;">S</div>
+        </div>
+        <span style="font-size:12px;color:var(--sub);">
+          <span id="group-count" style="color:var(--or);font-weight:700;">247</span> membres actifs
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIX -->
+<section class="prix-bg reveal" id="acheter">
+  <div class="wrap">
+    <div class="s-tag">Accès immédiat</div>
+    <h2 class="s-title">Un investissement.<br><em>Une transformation.</em></h2>
+    <div class="pbox">
+      <div class="pglow"></div>
+      <div class="pbadge">Offre de lancement</div>
+      <div class="pprod">MindLink — Guide Digital</div>
+      <div class="ptitle">Comment Trouver des Clients à Volonté</div>
+      <div class="ptagline">Le Système Complet</div>
+      <ul class="pincludes">
+        <li><div class="chk">✓</div> <strong style="color:var(--blanc)">Guide numérique PDF</strong> — téléchargeable sur le portail d'achat + envoyé par email, 7 chapitres actionnables</li>
+        <li><div class="chk">✓</div> 3 scripts de prospection prêts à envoyer</li>
+        <li><div class="chk">✓</div> Le plan des 7 jours étape par étape</li>
+        <li><div class="chk">✓</div> Techniques de closing & gestion des objections</li>
+        <li><div class="chk">✓</div> Le système pipeline pour clients en continu</li>
+        <li><div class="chk">✓</div> <strong style="color:var(--or)">Accès groupe MindLink — Vente & Persuasion</strong></li>
+        <li><div class="chk">✓</div> Livraison immédiate · Accès à vie</li>
+      </ul>
+      <div class="ptotal">
+        <div class="plabel">Prix unique aujourd'hui</div>
+        <div class="pamount"><sup>FCFA</sup> 7 500</div>
+        <div class="pcurrency">Paiement unique · Pas d'abonnement · Prix augmente prochainement</div>
+      </div>
+      <a href="https://packdigitalpro.mychariow.shop/prd_xym4m5/checkout" class="btn-buy">
+        Obtenir le guide maintenant →
+      </a>
+      <div style="margin-top:12px;display:flex;align-items:center;justify-content:center;gap:8px;">
+        <div style="width:8px;height:8px;border-radius:50%;background:var(--vert);animation:pulse-glow 1.5s ease-in-out infinite;flex-shrink:0;"></div>
+        <span style="font-size:12px;color:var(--sub);">
+          <span id="buy-count" style="color:var(--vert);font-weight:700;">83</span> personnes ont déjà obtenu ce guide
+        </span>
+      </div>
+      <div class="pmicro">
+        <div class="mi"><span>🔒</span> Paiement sécurisé</div>
+        <div class="mi"><span>⚡</span> Livraison immédiate</div>
+        <div class="mi"><span>♾️</span> Accès à vie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="reveal">
+  <div class="wrap">
+    <div class="s-tag">Tes questions</div>
+    <h2 class="s-title">Tout ce que<br>tu veux <em>savoir</em></h2>
+    <div class="faq-list">
+      <div class="fi"><div class="fq">Est-ce que ça marche même si je n'ai pas encore de clients ?<span class="fi-icon">+</span></div><div class="fa">Oui — le système fonctionne que tu aies déjà une base de clients ou que tu démarres. Les scripts et la méthode sont conçus pour générer des clients dans les deux cas.</div></div>
+      <div class="fi"><div class="fq">Pour quel type d'activité ce guide fonctionne-t-il ?<span class="fi-icon">+</span></div><div class="fa">Freelance, prestataire de service, revendeur, coach, consultant, artisan — toute personne qui vend une compétence ou un service peut appliquer ce système immédiatement.</div></div>
+      <div class="fi"><div class="fq">Comment je reçois le guide après le paiement ?<span class="fi-icon">+</span></div><div class="fa">Après confirmation du paiement, le guide est téléchargeable directement sur le portail d'achat. Un lien de téléchargement t'est également envoyé par email. Aucun produit physique — tout est accessible instantanément en numérique.</div></div>
+      <div class="fi"><div class="fq">C'est quoi le groupe MindLink inclus ?<span class="fi-icon">+</span></div><div class="fa">Un groupe privé où tu peux soumettre tes messages de prospection pour analyse, poser tes questions en temps réel, et bénéficier d'un accompagnement personnalisé selon ton activité.</div></div>
+      <div class="fi"><div class="fq">Combien de temps ça prend par jour ?<span class="fi-icon">+</span></div><div class="fa">Entre 30 minutes et 1h30 selon le jour. Le plan est conçu pour être exécutable même avec un emploi du temps chargé.</div></div>
+      <div class="fi"><div class="fq">Le prix va vraiment augmenter ?<span class="fi-icon">+</span></div><div class="fa">Oui. Le prix actuel est un prix de lancement. Une fois cette phase terminée, le tarif sera revu à la hausse. C'est maintenant que le prix est au plus bas.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="fcta reveal">
+  <div class="wrap">
+    <div class="fbig">
+      Ton prochain
+      <em>client t'attend.</em>
+    </div>
+    <p class="fsub">Le seul ennemi maintenant, c'est l'inaction.</p>
+    <a href="https://packdigitalpro.mychariow.shop/prd_xym4m5/checkout" class="btn-hero">
+      Je règle ce problème aujourd'hui →
+    </a>
+  </div>
+</section>
+
+<!-- CHARIOW WIDGET -->
+<section style="padding:70px 0;background:var(--fond2);">
+  <div class="wrap">
+    <div class="s-tag">Paiement sécurisé</div>
+    <h2 class="s-title" style="margin-bottom:32px">Finalise ton<br><em>accès maintenant</em></h2>
+    <div style="
+      background:#ffffff;
+      border:1px solid rgba(201,168,76,.25);
+      border-radius:12px;
+      overflow:hidden;
+      position:relative;
+    ">
+      <div style="
+        position:absolute;top:0;left:0;right:0;height:3px;
+        background:linear-gradient(90deg,transparent,var(--or),transparent);
+      "></div>
+      <div id="chariow-widget"
+        data-product-id="prd_xym4m5"
+        data-store-domain="packdigitalpro.mychariow.shop"
+        data-style="frame"
+        data-border-style="rounded"
+        data-cta-width="xs"
+        data-cta-animation="none"
+        data-locale="fr"
+        data-background-color="#FFFFFF">
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var script = document.createElement('script');
+  script.src = 'https://js.chariowcdn.com/v1/widget.min.js';
+  script.async = true;
+  document.head.appendChild(script);
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://js.chariowcdn.com/v1/widget.min.css';
+  document.head.appendChild(link);
+})();
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fbrand">MINDLINK</div>
+  <div class="fsubb">Vente & Persuasion</div>
+  <div class="fnote">© MindLink — Tous droits réservés</div>
+</footer>
+
+<!-- CONTACT BUBBLE -->
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/+213558367332?text=Bonjour%2C%20j'ai%20une%20question%20concernant%20le%20guide%20%22Comment%20Trouver%20des%20Clients%20%C3%A0%20Volont%C3%A9%22."
+   target="_blank"
+   id="wa-btn"
+   style="
+     position:fixed;bottom:80px;right:20px;z-index:160;
+     width:44px;height:44px;
+     background:#25D366;
+     border-radius:50%;
+     display:flex;align-items:center;justify-content:center;
+     text-decoration:none;
+     box-shadow:0 4px 20px rgba(37,211,102,.4);
+     animation:wa-glow 2.5s ease-in-out infinite;
+   ">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <div id="wa-tooltip" style="
+    position:absolute;right:52px;bottom:8px;
+    background:rgba(7,7,15,.95);
+    border:1px solid rgba(37,211,102,.3);
+    color:#fff;
+    font-family:'Syne',sans-serif;
+    font-size:11px;font-weight:600;
+    padding:6px 11px;
+    white-space:nowrap;border-radius:4px;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .4s ease;
+  ">💬 Besoin d'aide ?</div>
+</a>
+
+<style>
+@keyframes wa-glow {
+  0%,100%{ box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,.3); }
+  50%{ box-shadow:0 4px 30px rgba(37,211,102,.6),0 0 0 10px rgba(37,211,102,.0); }
+}
+</style>
+
+<!-- POPUP CODE PROMO -->
+<div id="promo-overlay" style="
+  position:fixed;inset:0;z-index:500;
+  background:rgba(0,0,0,.75);
+  backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+">
+  <div style="
+    background:var(--card2);
+    border:1px solid rgba(201,168,76,.35);
+    max-width:420px;width:100%;
+    padding:36px 28px;
+    position:relative;
+    text-align:center;
+    overflow:hidden;
+  ">
+    <!-- Gold top line -->
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--or),transparent);"></div>
+
+    <!-- Close -->
+    <button onclick="closePromo()" style="
+      position:absolute;top:12px;right:14px;
+      background:none;border:none;cursor:pointer;
+      color:var(--sub);font-size:20px;line-height:1;
+    ">×</button>
+
+    <!-- Icon -->
+    <div style="font-size:36px;margin-bottom:12px;">🎁</div>
+
+    <!-- Title -->
+    <div style="
+      font-family:'Syne',sans-serif;
+      font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+      color:var(--or);margin-bottom:10px;
+    ">OFFRE EXCLUSIVE</div>
+
+    <div style="
+      font-family:'Playfair Display',serif;
+      font-size:22px;font-weight:900;color:var(--blanc);
+      line-height:1.2;margin-bottom:8px;
+    ">Tu as débloqué<br>une réduction de <span style="color:var(--or)">10%</span></div>
+
+    <p style="font-size:13px;color:var(--gris);margin-bottom:24px;line-height:1.6;">
+      Ce code est réservé aux visiteurs sérieux.<br>
+      Il expire dans :
+    </p>
+
+    <!-- Countdown -->
+    <div style="
+      font-family:'Syne',sans-serif;
+      font-size:32px;font-weight:800;
+      color:var(--or);letter-spacing:4px;
+      margin-bottom:24px;
+    " id="promo-timer">10:00</div>
+
+    <!-- Code -->
+    <div style="
+      background:var(--fond);
+      border:1px dashed rgba(201,168,76,.5);
+      padding:14px 20px;
+      margin-bottom:16px;
+      position:relative;
+    ">
+      <div style="
+        font-family:'Syne',sans-serif;
+        font-size:28px;font-weight:800;
+        letter-spacing:4px;color:var(--blanc);
+      " id="promo-code">VOLONTE10</div>
+      <div style="font-size:11px;color:var(--sub);margin-top:4px;">Code de réduction</div>
+    </div>
+
+    <!-- Copy button -->
+    <button onclick="copyCode()" id="copy-btn" style="
+      width:100%;
+      background:var(--or);color:var(--fond);
+      font-family:'Syne',sans-serif;
+      font-size:13px;font-weight:800;
+      letter-spacing:2px;text-transform:uppercase;
+      padding:14px 20px;border:none;cursor:pointer;
+      transition:background .2s;margin-bottom:12px;
+      animation:pulse-glow 2.5s ease-in-out infinite;
+    ">📋 Copier le code</button>
+
+    <div style="font-size:11px;color:var(--sub);">
+      Applique ce code au moment du paiement
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes wa-pulse {
+  0%,100%{ box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,.4); }
+  50%{ box-shadow:0 4px 30px rgba(37,211,102,.6),0 0 0 10px rgba(37,211,102,.0); }
+}
+#promo-overlay.show { display:flex; }
+</style>
+
+<script>
+// ── WhatsApp tooltip ────────────────────────────────────────────────────────
+var waBtn = document.getElementById('wa-btn');
+var waTip = document.getElementById('wa-tooltip');
+if (waBtn && waTip) {
+  waBtn.addEventListener('mouseenter', function(){ waTip.style.opacity = '1'; });
+  waBtn.addEventListener('mouseleave', function(){ waTip.style.opacity = '0'; });
+}
+
+// Tooltip visible quand on arrive en bas de page
+window.addEventListener('scroll', function() {
+  var tip = document.getElementById('wa-tooltip');
+  if (!tip) return;
+  var scrolled = window.scrollY + window.innerHeight;
+  var total = document.documentElement.scrollHeight;
+  if (scrolled >= total - 200) {
+    tip.style.opacity = '1';
+  } else {
+    tip.style.opacity = '0';
+  }
+});
+
+// ── Popup promo ─────────────────────────────────────────────────────────────
+var promoShown = false;
+try { if (localStorage.getItem('ml_promo')) promoShown = true; } catch(e){}
+
+// Popup déclenché quand on scrolle 80% de la page
+window.addEventListener('scroll', function() {
+  if (promoShown) return;
+  var scrolled = window.scrollY + window.innerHeight;
+  var total = document.documentElement.scrollHeight;
+  if (scrolled >= total * 0.80) {
+    showPromo();
+  }
+});
+
+function showPromo() {
+  if (promoShown) return;
+  promoShown = true;
+  try { localStorage.setItem('ml_promo', '1'); } catch(e){}
+  var overlay = document.getElementById('promo-overlay');
+  if (overlay) overlay.classList.add('show');
+  startPromoTimer();
+}
+
+function closePromo() {
+  var overlay = document.getElementById('promo-overlay');
+  if (overlay) overlay.classList.remove('show');
+}
+
+// Timer 10 minutes
+function startPromoTimer() {
+  var total = 10 * 60;
+  var el = document.getElementById('promo-timer');
+  var interval = setInterval(function() {
+    total--;
+    if (total <= 0) {
+      clearInterval(interval);
+      closePromo();
+      return;
+    }
+    var m = Math.floor(total / 60);
+    var s = total % 60;
+    if (el) el.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  }, 1000);
+}
+
+function copyCode() {
+  var code = 'VOLONTE10';
+  var btn = document.getElementById('copy-btn');
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(code).then(function() {
+      if (btn) { btn.textContent = '✅ Code copié !'; btn.style.background = '#2ECC8A'; }
+      setTimeout(function() {
+        if (btn) { btn.textContent = '📋 Copier le code'; btn.style.background = 'var(--or)'; }
+      }, 2500);
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = code;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    if (btn) { btn.textContent = '✅ Code copié !'; btn.style.background = '#2ECC8A'; }
+    setTimeout(function() {
+      if (btn) { btn.textContent = '📋 Copier le code'; btn.style.background = 'var(--or)'; }
+    }, 2500);
+  }
+}
+</script>
+
+<!-- STICKY -->
+<div class="sticky" id="sticky">
+  <div class="sl">
+    <div class="sl-lbl">Guide complet · Accès immédiat</div>
+    <div class="sl-price">7 500 FCFA</div>
+  </div>
+  <a href="https://packdigitalpro.mychariow.shop/prd_xym4m5/checkout" class="sbtn">Obtenir maintenant →</a>
+</div>
+
+<script>
+// ── Countdown ──────────────────────────────────────────────────────────────
+(function(){
+  var dl = 0;
+  try { dl = parseInt(localStorage.getItem('ml_dl')) || 0; } catch(e){}
+  if (!dl || dl < Date.now()) {
+    dl = Date.now() + 24 * 3600 * 1000;
+    try { localStorage.setItem('ml_dl', dl); } catch(e){}
+  }
+  function tick() {
+    var d = dl - Date.now();
+    if (d <= 0) {
+      dl = Date.now() + 24 * 3600 * 1000;
+      try { localStorage.setItem('ml_dl', dl); } catch(e){}
+      d = 24 * 3600 * 1000;
+    }
+    var h = Math.floor(d / 3600000);
+    var m = Math.floor((d % 3600000) / 60000);
+    var s = Math.floor((d % 60000) / 1000);
+    var el = document.getElementById('cd');
+    if (el) el.textContent =
+      String(h).padStart(2,'0') + ':' +
+      String(m).padStart(2,'0') + ':' +
+      String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+// ── Sticky bar ─────────────────────────────────────────────────────────────
+var sticky = document.getElementById('sticky');
+var hero   = document.querySelector('.hero');
+if (sticky && hero) {
+  new IntersectionObserver(function(entries) {
+    sticky.classList.toggle('show', !entries[0].isIntersecting);
+  }, { threshold: 0.1 }).observe(hero);
+}
+
+// ── Reveal on scroll ───────────────────────────────────────────────────────
+var reveals = document.querySelectorAll('.reveal');
+var revObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) e.target.classList.add('in');
+  });
+}, { threshold: 0.08 });
+reveals.forEach(function(r) { revObs.observe(r); });
+
+// ── FAQ ────────────────────────────────────────────────────────────────────
+document.querySelectorAll('.fq').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.fi').forEach(function(i) { i.classList.remove('open'); });
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// ── Video hover effect ─────────────────────────────────────────────────────
+var vwEl = document.getElementById('vw');
+var playBtn = document.getElementById('play-btn');
+if (vwEl && playBtn) {
+  vwEl.addEventListener('mouseenter', function(){
+    playBtn.style.transform = 'translate(-50%,-50%) scale(1.1)';
+    playBtn.style.background = 'rgba(201,168,76,1)';
+  });
+  vwEl.addEventListener('mouseleave', function(){
+    playBtn.style.transform = 'translate(-50%,-50%) scale(1)';
+    playBtn.style.background = 'rgba(201,168,76,.92)';
+  });
+}
+
+// ── Cache nav et sticky quand widget visible ───────────────────────────────
+var chariowSection = document.querySelector('#chariow-widget') 
+  ? document.querySelector('#chariow-widget').closest('section') 
+  : null;
+var navEl = document.querySelector('nav');
+var urgenceEl = document.querySelector('.urgence');
+
+if (chariowSection) {
+  var widgetObs = new IntersectionObserver(function(entries) {
+    var isVisible = entries[0].isIntersecting;
+    if (navEl)      navEl.style.transition      = 'opacity .3s ease, transform .3s ease';
+    if (urgenceEl)  urgenceEl.style.transition  = 'opacity .3s ease, transform .3s ease';
+    if (sticky)     sticky.style.transition     = 'transform .4s ease, opacity .3s ease';
+    if (isVisible) {
+      if (navEl)     { navEl.style.opacity = '0'; navEl.style.transform = 'translateY(-100%)'; navEl.style.pointerEvents = 'none'; }
+      if (urgenceEl) { urgenceEl.style.opacity = '0'; urgenceEl.style.transform = 'translateY(-100%)'; urgenceEl.style.pointerEvents = 'none'; }
+      if (sticky)    { sticky.style.opacity = '0'; sticky.style.pointerEvents = 'none'; sticky.style.transform = 'translateY(100%)'; }
+    } else {
+      if (navEl)     { navEl.style.opacity = '1'; navEl.style.transform = 'translateY(0)'; navEl.style.pointerEvents = 'auto'; }
+      if (urgenceEl) { urgenceEl.style.opacity = '1'; urgenceEl.style.transform = 'translateY(0)'; urgenceEl.style.pointerEvents = 'auto'; }
+      if (sticky)    { sticky.style.opacity = '1'; sticky.style.pointerEvents = 'auto'; }
+    }
+  }, { threshold: 0.2 });
+  widgetObs.observe(chariowSection);
+}
+// ── Sécurité page ─────────────────────────────────────────────────────────
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  if((e.ctrlKey&&(e.key==='u'||e.key==='U'||e.key==='s'||e.key==='S'))||e.key==='F12'){
+    e.preventDefault();
+  }
+});
+
+(function(){
+  var groupEl = document.getElementById('group-count');
+  var buyEl   = document.getElementById('buy-count');
+  var groupBase = 247;
+  var buyBase   = 83;
+  try {
+    var sg = parseInt(localStorage.getItem('ml_group'));
+    var sb = parseInt(localStorage.getItem('ml_buy'));
+    if (sg && sg >= 247) groupBase = sg;
+    if (sb && sb >= 83)  buyBase   = sb;
+  } catch(e){}
+  function update() {
+    if (groupEl) groupEl.textContent = groupBase;
+    if (buyEl)   buyEl.textContent   = buyBase;
+    try {
+      localStorage.setItem('ml_group', groupBase);
+      localStorage.setItem('ml_buy',   buyBase);
+    } catch(e){}
+  }
+  update();
+  // Groupe : +1 toutes les 50-100 secondes
+  function nextGroup(){
+    setTimeout(function(){
+      groupBase += 1;
+      update();
+      nextGroup();
+    }, Math.floor(Math.random()*50000)+50000);
+  }
+  // Achats : +1 toutes les 2-5 minutes
+  function nextBuy(){
+    setTimeout(function(){
+      buyBase += 1;
+      update();
+      nextBuy();
+    }, Math.floor(Math.random()*180000)+120000);
+  }
+  nextGroup();
+  nextBuy();
+})();
+</script>
+</body>
+</html>
